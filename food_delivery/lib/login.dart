@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/cadastro.dart';
 import 'home.dart';
+import 'principal.dart';
 
 class login extends StatefulWidget {
   const login({Key? key}) : super(key: key);
@@ -25,7 +27,9 @@ class _loginState extends State<login> {
                             color: Colors.red,
                             fontSize: 30,
                             fontWeight: FontWeight.w800)),
-                            SizedBox(height: 50,),
+                    SizedBox(
+                      height: 50,
+                    ),
                     TextFormField(
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
@@ -36,7 +40,9 @@ class _loginState extends State<login> {
                               fontSize: 20)),
                       style: TextStyle(fontSize: 20),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     TextFormField(
                       keyboardType: TextInputType.text,
                       obscureText: true,
@@ -58,29 +64,50 @@ class _loginState extends State<login> {
                           ),
                           onPressed: () {},
                         )),
-                        SizedBox(height: 80,),
-                        Container(
-                    height: 60,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.all(Radius.circular(5))),
-                    child: SizedBox.expand(
-                      child: FlatButton(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text("Entrar",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 18))
-                          ],
+                    SizedBox(
+                      height: 80,
+                    ),
+                    Container(
+                      height: 60,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.all(Radius.circular(5))),
+                      child: SizedBox.expand(
+                        child: FlatButton(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text("Entrar",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 18))
+                            ],
+                          ),
+                          onPressed: () {
+                             Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => principal()));
+                          },
                         ),
-                        onPressed: () {},
                       ),
                     ),
-                  ),
+                    SizedBox(
+                      height: 60,
+                    ),
+                    FlatButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => cadastro()));
+                        },
+                        child: Text(
+                          "Ainda não possui uma conta? \n Cadastra-se agora",
+                          style: TextStyle(color: Colors.blue, fontSize: 15),
+                       textAlign: TextAlign.center, ))
                   ],
                 ),
               ],

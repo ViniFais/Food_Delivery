@@ -1,6 +1,6 @@
-import 'dart:ui';
-import 'tela_de_carregamento.dart';
+import 'login.dart';
 import 'package:flutter/material.dart';
+import 'principal.dart';
 
 class cadastro extends StatefulWidget {
   const cadastro({Key? key}) : super(key: key);
@@ -100,7 +100,7 @@ class _cadastroState extends State<cadastro> {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => MyApp()));
+                                            builder: (context) => principal()));
                                   }),
                             ],
                           ),
@@ -109,6 +109,18 @@ class _cadastroState extends State<cadastro> {
                     ),
                   ),
                 ),
+                SizedBox(height: 60,),
+                 FlatButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => login()));
+                        },
+                        child: Text(
+                          "Já possui uma conta? Entre agora",
+                          style: TextStyle(color: Colors.blue, fontSize: 15),
+                        ))
               ],
             ),
           ),

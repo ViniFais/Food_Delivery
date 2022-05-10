@@ -13,7 +13,8 @@ class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: SingleChildScrollView(
+      child: Column(
         children: <Widget>[
           Padding(
               padding: EdgeInsets.only(left: 20, right: 20),
@@ -35,7 +36,7 @@ class _homeState extends State<home> {
                     ],
                   ),
                   SizedBox(
-                    height: 280,
+                    height: 400,
                   ),
                   Container(
                     height: 60,
@@ -94,6 +95,7 @@ class _homeState extends State<home> {
               )),
         ],
       ),
+    ),
     );
   }
 }

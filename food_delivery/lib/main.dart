@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/cadastro.dart';
+import 'package:food_delivery/principal.dart';
 import 'home.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Food());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class Food extends StatelessWidget {
+  const Food({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
