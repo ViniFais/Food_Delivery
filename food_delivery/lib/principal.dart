@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/pedido.dart';
+import 'pesquisa.dart';
+import 'infpessoal.dart';
+import 'configuracao.dart';
 
 class principal extends StatefulWidget {
   const principal({Key? key}) : super(key: key);
@@ -19,9 +23,9 @@ class _principalState extends State<principal> {
                 height: size.height * 0.2,
                 child: Stack(children: <Widget>[
                   Container(
-                      height: size.height * 0.2 - 27,
+                      height: size.height * 0.2 - 20,
                       decoration: BoxDecoration(
-                        color: Colors.red,
+                        color: Colors.redAccent[700],
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(36),
                           bottomRight: Radius.circular(36),
@@ -31,7 +35,7 @@ class _principalState extends State<principal> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Padding(
-                            padding: EdgeInsets.only(),
+                            padding: EdgeInsets.only(top: 30),
                             child: Text(
                               "Food Delivery",
                               style: TextStyle(
@@ -43,45 +47,9 @@ class _principalState extends State<principal> {
                         ],
                       ))
                 ])),
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              child: Container(
-                alignment: Alignment.center,
-                margin: EdgeInsets.symmetric(horizontal: 30),
-                height: 54,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: const [
-                      BoxShadow(
-                        offset: Offset(0, 10),
-                        blurRadius: 50,
-                        color: Colors.black54,
-                      ),
-                    ]),
-                child: Row(
-                  children: <Widget>[
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Expanded(
-                      child: TextField(
-                        decoration: InputDecoration(
-                          hintText: " Pesquisar",
-                          hintStyle: TextStyle(color: Colors.grey),
-                          enabledBorder: InputBorder.none,
-                          focusedBorder: InputBorder.none,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            
             Padding(
-              padding: EdgeInsets.only(top: 34),
+              padding: EdgeInsets.only(top: 10),
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -96,7 +64,7 @@ class _principalState extends State<principal> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             image: DecorationImage(
-                                image: AssetImage("imagens/promo3.jpeg"),
+                                image: AssetImage("assets/imagens/promo3.jpeg"),
                                 fit: BoxFit.cover)),
                       ),
                     ),
@@ -110,7 +78,7 @@ class _principalState extends State<principal> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             image: DecorationImage(
-                                image: AssetImage("imagens/promo2.jpeg"),
+                                image: AssetImage("assets/imagens/promo2.jpeg"),
                                 fit: BoxFit.cover)),
                       ),
                     ),
@@ -124,7 +92,7 @@ class _principalState extends State<principal> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             image: DecorationImage(
-                                image: AssetImage("imagens/promo1.jpeg"),
+                                image: AssetImage("assets/imagens/promo1.jpeg"),
                                 fit: BoxFit.cover)),
                       ),
                     ),
@@ -453,31 +421,56 @@ class _principalState extends State<principal> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-            backgroundColor: Colors.red,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Pesquisar',
-            backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Informações Pessoais',
-            backgroundColor: Colors.purple,
-          ),
-            BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Configuração',
-            backgroundColor: Colors.purple,
-          ),
-        ],
-        selectedItemColor: Colors.white,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.black,
+        onPressed: () {
+          Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => pedido()));
+        },
+        child: const Icon(Icons.shopping_cart),
       ),
+      bottomNavigationBar: BottomAppBar(
+          shape: const CircularNotchedRectangle(),
+          color: Colors.redAccent[700],
+          child: IconTheme(
+            data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.home),
+                    onPressed: () {
+                      
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.search),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => pesquisa()));
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.person),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => infpessoal()));
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.settings),
+                    onPressed: () {
+                       Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => configuracao()));
+                    },
+                  ),
+                ],
+              ),
+            ),
+          )),
     );
   }
 }

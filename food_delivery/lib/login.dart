@@ -14,17 +14,18 @@ class _loginState extends State<login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: SingleChildScrollView(
+     child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.only(top: 30, left: 20, right: 20),
+            padding: EdgeInsets.only(top: 100, left: 20, right: 20),
             child: Column(
               children: <Widget>[
                 Column(
                   children: <Widget>[
                     Text("Faça seu login para Matar sua fome",
                         style: TextStyle(
-                            color: Colors.red,
+                            color: Colors.redAccent[700],
                             fontSize: 30,
                             fontWeight: FontWeight.w800)),
                     SizedBox(
@@ -71,7 +72,7 @@ class _loginState extends State<login> {
                       height: 60,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                          color: Colors.red,
+                          color: Colors.redAccent[700],
                           borderRadius: BorderRadius.all(Radius.circular(5))),
                       child: SizedBox.expand(
                         child: FlatButton(
@@ -114,6 +115,7 @@ class _loginState extends State<login> {
             ),
           ),
         ],
+      ),
       ),
     );
   }

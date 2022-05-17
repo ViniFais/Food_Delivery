@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/principal.dart';
 import 'home.dart';
 
 void main() {
@@ -21,3 +20,5 @@ class Food extends StatelessWidget {
     );
   }
 }
+
+

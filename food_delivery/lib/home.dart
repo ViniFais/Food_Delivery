@@ -31,18 +31,18 @@ class _homeState extends State<home> {
                         style: TextStyle(
                             fontSize: 40,
                             fontWeight: FontWeight.w800,
-                            color: Colors.red),
+                            color: Colors.redAccent[700],),
                       )
                     ],
                   ),
                   SizedBox(
-                    height: 400,
+                    height: 450,
                   ),
                   Container(
                     height: 60,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                        color: Colors.red,
+                        color: Colors.redAccent[700],
                         borderRadius: BorderRadius.all(Radius.circular(5))),
                     child: SizedBox.expand(
                       child: FlatButton(
@@ -70,7 +70,7 @@ class _homeState extends State<home> {
                     height: 60,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                        color: Colors.red,
+                        color: Colors.redAccent[700],
                         borderRadius: BorderRadius.all(Radius.circular(5))),
                     child: SizedBox.expand(
                       child: FlatButton(
