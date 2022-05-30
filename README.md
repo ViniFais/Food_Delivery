@@ -1,6 +1,9 @@
 # Food_Delivery 🍔
  App de Delivery feito em Flutter 
 	
+# Status	
+🟢 Concluido
+
 # 🔨 Ferramentas usadas
 <ul>
 	<li> Flutter </li>
